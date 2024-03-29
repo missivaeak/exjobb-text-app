@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import { Text, View, Modal, StyleSheet, Pressable } from "react-native"
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
+// import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import styles from '../constants/styles'
 
 export default function ModalDefault({children, setModalOpen}: {

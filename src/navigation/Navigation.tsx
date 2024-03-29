@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react'
-import { View, Button, Text } from 'react-native'
+// import { View, Button, Text } from 'react-native'
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
+// import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import type { RootStackNavigationProp, RootStackParamList } from './types'
 

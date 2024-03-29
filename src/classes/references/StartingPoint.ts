@@ -1,9 +1,9 @@
 // app/models/StartingPoint.ts
 
-import Reference from "./Reference"
-import ReferenceOptions from "./ReferenceOptions"
-import Container from "./Container"
-import Picture from "../Picture"
+// import Reference from "./Reference"
+// import ReferenceOptions from "./ReferenceOptions"
+// import Container from "./Container"
+// import Picture from "../Picture"
 
 // export class StartingPoint extends Container {
 //     constructor(options: ReferenceOptions, image: Image) {

@@ -1,8 +1,8 @@
 import { Pressable, Text } from 'react-native'
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
+// import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-import type { RootStackScreenProps } from '../navigation/types'
-import { HeaderBackButtonProps } from '@react-navigation/native-stack/lib/typescript/src/types'
+// import type { RootStackScreenProps } from '../navigation/types'
+// import { HeaderBackButtonProps } from '@react-navigation/native-stack/lib/typescript/src/types'
 
 import styles from '../constants/styles'
 

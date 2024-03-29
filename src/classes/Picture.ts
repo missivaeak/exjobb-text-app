@@ -1,5 +1,5 @@
 // app/models/Picture.ts
-import EnvVars from "../constants/EnvVars"
+// import EnvVars from "../constants/EnvVars"
 // import RNFetchBlob from 'react-native-blob-util'
 
 export default class Picture {

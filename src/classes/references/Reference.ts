@@ -1,7 +1,8 @@
 // app/models/Reference.ts
 
+import { Ref } from "react"
 import Database from "../../services/Database"
-import Container from "./Container"
+// import Container from "./Container"
 import ReferenceOptions from "./ReferenceOptions"
 
 export default abstract class Reference {
@@ -48,7 +49,7 @@ export default abstract class Reference {
   }
 
   async fetchParent(db: Database) {
-    this._parent = await db.getParentOf(this)
+    this._parent = await db.getParentOf(this) as unknown as Reference
   }
 
   get parent() {

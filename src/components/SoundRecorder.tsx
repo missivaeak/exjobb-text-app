@@ -1,10 +1,10 @@
 import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import { Pressable, StyleSheet, Text, View } from "react-native"
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
+// import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import * as Speech from 'expo-speech'
 
 import type CustomButtonType from "../types/CustomButtonType"
-import type Sound from "../classes/references/Sound"
+// import type Sound from "../classes/references/Sound"
 
 // import Recorder from "../services/Recorder"
 // import Player from "../services/Player"

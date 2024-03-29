@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { View, StyleSheet, Text } from "react-native"
-import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons"
+// import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons"
 // import Animated, {
 //   useAnimatedStyle,
 //   useSharedValue,

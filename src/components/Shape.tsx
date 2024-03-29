@@ -1,8 +1,8 @@
 import { GestureResponderEvent, StyleSheet, View, ViewStyle, Pressable, StyleProp, useWindowDimensions, Text } from "react-native";
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
+// import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import Region from "../classes/references/Region"
-import { useCallback, useEffect, useRef } from "react";
+// import { useCallback, useEffect, useRef } from "react";
 import styles from "../constants/styles";
 
 function DeleteOverlay({
@@ -90,7 +90,7 @@ export default function Shape({
   let computedStyles = {shape: {}}
 
   if (region.shape.properties.type === 'circle') {
-    computedStyles = StyleSheet.create({
+    computedStyles = StyleSheet.create<{shape: any}>({
       shape: {
         borderRadius: region.shape.properties.radius,
             width: region.shape.properties.radius * 2,

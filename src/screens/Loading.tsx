@@ -7,7 +7,7 @@
 
 import { useState, useContext, useEffect, useRef } from 'react'
 import { Text, View } from 'react-native'
-import { useCameraPermission, useMicrophonePermission } from 'react-native-vision-camera'
+// import { useCameraPermission, useMicrophonePermission } from 'react-native-vision-camera'
 
 import GlobalContext from '../contexts/GlobalContext'
 import Database from '../services/Database'

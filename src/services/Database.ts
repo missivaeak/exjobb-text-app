@@ -686,7 +686,7 @@ export default class Database {
    * Parent things
    */
 
-  // async getParentOf(reference: Reference) {
+  async getParentOf(reference: Reference) {
   //   switch(reference.type) {
   //     case 'folder':
   //       return this.getParentOfFolder(reference as Container)
@@ -694,7 +694,7 @@ export default class Database {
   //     default:
   //       throw new Error('Error getting parent of:' + reference)
   //   }
-  // }
+  }
 
   // private async getParentOfFolder(folder: Container) {
   //   const query = `

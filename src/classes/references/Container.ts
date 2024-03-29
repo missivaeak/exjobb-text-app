@@ -4,7 +4,7 @@ import Reference from "./Reference"
 import ReferenceOptions from "./ReferenceOptions"
 import Scene from "./Scene"
 import Picture from "../Picture"
-import Database from "../../services/Database"
+// import Database from "../../services/Database"
 
 export default class Container extends Reference {
     protected _scenes: Array<Scene>

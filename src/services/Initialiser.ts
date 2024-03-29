@@ -1,5 +1,5 @@
 import Database from "./Database"
-import { Asset, useAssets } from "expo-asset"
+// import { Asset, useAssets } from "expo-asset"
 // import RNFetchBlob from 'react-native-blob-util'
 
 import EnvVars from "../constants/EnvVars"

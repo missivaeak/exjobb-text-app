@@ -55,7 +55,9 @@ export default function EditPlace(
   // main useeffect to update on navigation to screen
   useFocusEffect(useCallback(() => {
     globalState.database?.sync(route.params.place)?.then((result) => {
-      setPlace(Object.create(result))
+      if (result) {
+        setPlace(Object.create(result))
+      }
     })
 
     return () => {

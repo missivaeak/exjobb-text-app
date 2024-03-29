@@ -1,6 +1,6 @@
 
 import { Image, StyleProp, ImageStyle, StyleSheet, Pressable, Text } from "react-native";
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
+// import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import Picture from "../../classes/Picture";
 import EnvVars from "../../constants/EnvVars";
