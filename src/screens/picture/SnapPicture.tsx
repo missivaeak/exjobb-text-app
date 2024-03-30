@@ -58,14 +58,14 @@ export default function SnapPicture(
 
   // main photo snap function
   const onPhotoCaptured = useCallback(
-    async () => {
+    async (nav) => {
       const path = await Photographer.save()
       const picture = await globalState.database?.insertPicture(path, 'jpg')
 
       setSpinnerActive(false)
 
       if (picture) {
-        return navigation.push('ConfirmPicture', {
+        return nav.push('ConfirmPicture', {
           ...route.params,
           picture
         })

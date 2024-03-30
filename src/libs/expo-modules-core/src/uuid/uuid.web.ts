@@ -4,10 +4,10 @@ import { UUID, Uuidv5Namespace } from './uuid.types';
 
 function uuidv4(): string {
   // Crypto needs to be required when run in Node.js environment.
-  const cryptoObject =
-    typeof crypto === 'undefined' || typeof crypto.randomUUID === 'undefined'
-      ? require('crypto')
-      : crypto;
+  const cryptoObject = crypto
+    // typeof crypto === 'undefined' || typeof crypto.randomUUID === 'undefined'
+    //   ? require('crypto')
+    //   : crypto;
 
   if (!cryptoObject?.randomUUID) {
     throw Error("The browser doesn't support `crypto.randomUUID` function");

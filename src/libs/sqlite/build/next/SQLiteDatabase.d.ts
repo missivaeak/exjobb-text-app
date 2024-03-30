@@ -1,4 +1,4 @@
-import { Subscription } from 'expo-modules-core';
+import { Subscription } from '../../../expo-modules-core';
 import { NativeDatabase, SQLiteOpenOptions } from '../../src/next/NativeDatabase';
 import { SQLiteBindParams, SQLiteRunResult, SQLiteStatement, SQLiteVariadicBindParams } from '../../src/next/SQLiteStatement';
 export { SQLiteOpenOptions };

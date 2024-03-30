@@ -1,4 +1,4 @@
-import { EventEmitter } from 'expo-modules-core';
+import { EventEmitter } from '../../../expo-modules-core';
 import ExpoSQLite from './ExpoSQLiteNext';
 import { SQLiteStatement, } from './SQLiteStatement';
 const emitter = new EventEmitter(ExpoSQLite);

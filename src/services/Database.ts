@@ -1,5 +1,5 @@
 // import { enablePromise, openDatabase, ResultSet, SQLiteDatabase } from 'react-native-sqlite-storage'
-import * as SQLite from '../sqlite/next'
+import * as SQLite from '../libs/sqlite/next'
 import * as FileSystem from 'expo-file-system'
 import { Asset } from 'expo-asset'
 
