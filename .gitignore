@@ -33,3 +33,11 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# clear things for snack
+LICENSE
+README.md
+app.json
+babel.config.js
+metro.config.js
+tsconfig.js

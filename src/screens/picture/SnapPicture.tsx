@@ -5,17 +5,67 @@ import {
   useState,
   useEffect
 } from "react"
-import { View, StyleSheet, Text, Image } from "react-native"
+import { View, StyleSheet, Text, Image, Pressable } from "react-native"
 import { useIsFocused } from '@react-navigation/core'
 import { Asset } from 'expo-asset'
 
 import useIsForeground from "../../hooks/useIsForeground"
 import EnvVars from "../../constants/EnvVars"
-import CaptureButton from "../../components/CaptureButton"
 import Photographer from "../../services/Photographer"
 import GlobalContext from "../../contexts/GlobalContext"
 import ModalDefault from "../../components/ModalDefault"
 import { RootStackScreenProps } from "../../navigation/types"
+import styles from "../../constants/styles"
+
+function CaptureButton({
+  navigation,
+  onPhotoCaptured
+}: {
+  navigation: RootStackScreenProps<'SnapPicture'>['navigation'],
+  onPhotoCaptured: (navigation) => void
+}) {
+  const { globalState, setGlobalState, setSpinnerActive} = useContext(GlobalContext)
+
+  const takePhoto = useCallback(async (navigation) => {
+    try {
+      // if (camera.current == null) throw new Error('Camera ref is null!')
+
+      setSpinnerActive(true)
+      // console.log('Taking photo...')
+
+      // const photo = await camera.current.takePhoto({
+      //   enableShutterSound: false
+      // })
+
+      onPhotoCaptured(navigation)
+    } catch (e) {
+      console.error('Failed to take photo!', e)
+    }
+  }, [])
+
+  return (
+    <View style={componentStyles.flex}>
+      <Pressable
+        onPress={() => {
+          takePhoto(navigation)
+        }}
+        style={({pressed}) => [
+          styles.buttonLike,
+          pressed ? styles.pressed : null
+        ]}
+        >
+        <Text
+          style={{fontSize: 30}}
+          >
+          Blyll
+        </Text>
+        {/* {({pressed}) => (
+          <View style={pressed ? componentStyles.pressedButton : componentStyles.button} />
+        )} */}
+      </Pressable>
+    </View>
+  )
+}
 
 export default function SnapPicture(
   { navigation, route }: RootStackScreenProps<'SnapPicture'>
@@ -65,7 +115,7 @@ export default function SnapPicture(
       setSpinnerActive(false)
 
       if (picture) {
-        return nav.push('ConfirmPicture', {
+        return nav.push("ConfirmPicture", {
           ...route.params,
           picture
         })
@@ -79,7 +129,7 @@ export default function SnapPicture(
 
   return (
     <View 
-      style={styles.container}
+      style={componentStyles.container}
       >
       <Image
         style={[
@@ -119,10 +169,11 @@ export default function SnapPicture(
         }}
         >
         <View
-          style={styles.captureButton}
+          style={componentStyles.captureButton}
           >
           <CaptureButton
             // camera={cameraRef}
+            navigation={navigation}
             onPhotoCaptured={onPhotoCaptured}
             />
         </View>
@@ -145,7 +196,9 @@ export default function SnapPicture(
   )
 }
 
-const styles = StyleSheet.create({
+const borderWidth = EnvVars.captureButtonSize * 0.1
+
+const componentStyles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
     flex: 1,
@@ -176,4 +229,23 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  flex: {
+    flex: 1,
+  },
+  button: {
+    width: EnvVars.captureButtonSize,
+    height: EnvVars.captureButtonSize,
+    borderRadius: EnvVars.captureButtonSize / 2,
+    borderWidth: borderWidth,
+    borderColor: '#303030',
+    backgroundColor: '#ffffff44',
+  },
+  pressedButton: {
+    width: EnvVars.captureButtonSize,
+    height: EnvVars.captureButtonSize,
+    borderRadius: EnvVars.captureButtonSize / 2,
+    borderWidth: borderWidth,
+    borderColor: '#cccccc',
+    backgroundColor: '#00000044',
+  }
 })
