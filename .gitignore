@@ -39,4 +39,6 @@ LICENSE
 app.json
 babel.config.js
 metro.config.js
-tsconfig.js
+tsconfig.json
+package-lock.json
+package-snack.json
