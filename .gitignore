@@ -36,7 +36,6 @@ yarn-error.*
 
 # clear things for snack
 LICENSE
-README.md
 app.json
 babel.config.js
 metro.config.js
