@@ -41,4 +41,3 @@ babel.config.js
 metro.config.js
 tsconfig.json
 package-lock.json
-package-snack.json
