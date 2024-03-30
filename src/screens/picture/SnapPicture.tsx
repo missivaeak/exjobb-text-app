@@ -6,7 +6,6 @@ import {
   useEffect
 } from "react"
 import { View, StyleSheet, Text, Image, Pressable } from "react-native"
-import { useIsFocused } from '@react-navigation/core'
 import { Asset } from 'expo-asset'
 
 import useIsForeground from "../../hooks/useIsForeground"
@@ -89,11 +88,6 @@ export default function SnapPicture(
   // ref that is assigned by the Camera component
   // and used by the CaptureButton component
   // const camera = useRef<Camera>(null)
-
-  // check if camera page is active
-  const isFocussed = useIsFocused()
-  const isForeground = useIsForeground()
-  const isActive = isFocussed && isForeground
 
   // error handling
   // const onError = useCallback((error: CameraRuntimeError) => {

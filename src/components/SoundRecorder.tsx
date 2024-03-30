@@ -1,7 +1,8 @@
 import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import { Pressable, StyleSheet, Text, View } from "react-native"
 // import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
-import * as Speech from 'expo-speech'
+// import * as Speech from 'expo-speech'
+import { Audio } from "expo-av"
 
 import type CustomButtonType from "../types/CustomButtonType"
 // import type Sound from "../classes/references/Sound"
@@ -39,6 +40,25 @@ export default function SoundRecorder(
   const [ step, setStep ] = useState("ready")
   const filename = useRef('')
   const {globalState, setGlobalState} = useContext(GlobalContext)
+  const [sound, setSound] = useState<Audio.Sound>();
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(require('../assets/audio.mp3'))
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   useEffect(() => {
     // recorder = new Recorder()
@@ -65,16 +85,17 @@ export default function SoundRecorder(
   const play = useCallback(() => {
     setStep('listening')
 
-    timer = enqueueStep('reviewing', 3000, () => {
+    timer = enqueueStep('reviewing', 2000, () => {
       // recorder.stop()
       clearTimeout(timer)
     })
 
-    Speech.speak('sample audio', {
-      onDone: () => {
-        setStep('reviewing')
-      }
-    })
+    // Speech.speak('sample audio', {
+    //   onDone: () => {
+    //     setStep('reviewing')
+    //   }
+    // })
+    playSound()
 
     // Player.play(filename.current, () => {
     //   setStep('reviewing')
