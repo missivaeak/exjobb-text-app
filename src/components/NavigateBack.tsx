@@ -35,7 +35,8 @@ export default function NavigateBack({onPress}: {onPress: () => void}) {
           // paddingRight: 10,
           // textDecorationLine: 'underline',
           // textAlignVertical: 'top'
-          color: '#000'
+          color: '#000',
+          fontSize: 24
         }}
         >
         Hilm

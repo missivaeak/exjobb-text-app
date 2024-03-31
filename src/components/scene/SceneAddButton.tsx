@@ -18,7 +18,7 @@ export default function SceneAddButton({callback}: {callback: () => void}) {
         adjustsFontSizeToFit={true}
         /> */}
       <Text
-        style={{fontSize: 25}}
+        style={{fontSize: 35}}
         >
         Boodoo
       </Text>

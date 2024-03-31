@@ -28,9 +28,9 @@ export default function StartingPointPicture(props: {source: string}) {
     //   />
     <Text
       style={{
-          fontSize: 100,
+          fontSize: 140,
           color: "#000",
-          lineHeight: 105,
+          lineHeight: 145,
           textAlign: 'center',
           marginBottom: -17
           

@@ -28,7 +28,10 @@ export default function FolderSettingsButton() {
         adjustsFontSizeToFit={true}
         /> */}
       <Text
-        style={{color: '#000'}}>
+        style={{
+          color: '#000',
+          fontSize: 24
+          }}>
           Lotono
       </Text>
     </Pressable>
